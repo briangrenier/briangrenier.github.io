@@ -106,22 +106,22 @@
                 <div class="exposed">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
                     <div class="number" ref="Exposed/Symptomatic Students"></div>
-                    <div>Students Over Past 14 Days Absent with COVID-Like Symptoms</div>
+                    <div>Students Absent with COVID-Like Symptoms Over the Past 14 Days</div>
                 </div>
                 <div class="exposed">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
                     <div class="number" ref="Exposed/Symptomatic Staff"></div>
-                    <div>Staff Over Past 14 Days Absent with COVID-Like Symptoms</div>
+                    <div>Staff Absent with COVID-Like Symptoms Over the Past 14 Days</div>
                 </div>
                 <div class="positive">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
                     <div class="number" ref="Positive Students"></div>
-                    <div>Cumulative Students with Positive Cases</div>
+                    <div>Cumulative Number of Students with Positive Cases</div>
                 </div>
                 <div class="positive">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
                     <div class="number" ref="Positive Staff"></div>
-                    <div>Cumulative Staff with Positive Cases</div>
+                    <div>Cumulative Number of Staff with Positive Cases</div>
                 </div>
             </div>
             <div id="asof">Last Updated: <span ref="As of Date"></span></div>
@@ -210,22 +210,22 @@
                         labels: chart_data.map(val => val.Campus).map(val => val.split(" ")),
                         datasets: [
                             {
-                                label: "Exposed/Symptomatic Students",
+                                label: "Students Absent w/ COVID Symptoms Over Past 14 Days",
                                 data: chart_data.map(val => val["Exposed/Symptomatic Students"]),
                                 backgroundColor: "#003595",
                             },
                             {
-                                label: "Exposed/Symptomatic Staff",
+                                label: "Staff Absent w/ COVID Symptoms Over Past 14 Days",
                                 data: chart_data.map(val => val["Exposed/Symptomatic Staff"]),
                                 backgroundColor: "#838bfa",
                             },
                             {
-                                label: "Positive Students",
+                                label: "Cumulative Number of Positive Students",
                                 data: chart_data.map(val => val["Positive Students"]),
                                 backgroundColor: "#cf102d",
                             },
                             {
-                                label: "Positive Staff",
+                                label: "Cumulative Number of Positive Staff",
                                 data: chart_data.map(val => val["Positive Staff"]),
                                 backgroundColor: "#ff8983",
                             },
