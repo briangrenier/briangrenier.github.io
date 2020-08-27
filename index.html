@@ -107,31 +107,29 @@
 	                </div>
 	                <div class="exposed">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
-	                    <div class="number" ref=" STUDENTS
+	                    <div class="number" ref="STUDENTS
 Absent w/in last 14 days due to COVID-like symptoms"></div>
 	                    <div> STUDENTS
 Absent w/in last 14 days due to COVID-like symptoms </div>
 	                </div>
 	                <div class="exposed">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
-	                    <div class="number" ref=" STAFF
-Absent w/in last 14 days due to COVID-like symptoms "></div>
-	                    <div> STAFF
-Absent w/in last 14 days due to COVID-like symptoms </div>
-	                </div>
-	                <div class="positive">
-	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
-	                    <div class="number" ref=" CUMLATIVE
-Positive Students"></div>
-	                    <div> CUMLATIVE
-Positive Students</div>
+	                    <div class="number" ref="STAFF
+Absent w/in last 14 days due to COVID-like symptoms"></div>
+	                    <div>STAFF
+Absent w/in last 14 days due to COVID-like symptoms</div>
 	                </div>
 	                <div class="positive">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
 	                    <div class="number" ref="CUMLATIVE
-Positive Staff "></div>
-	                    <div>CUMLATIVE
-Positive Staff</div>
+Positive Students"></div>
+	                    <div>CUMLATIVE Positive Students</div>
+	                </div>
+	                <div class="positive">
+	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
+	                    <div class="number" ref="CUMLATIVE
+Positive Staff"></div>
+	                    <div>CUMLATIVE Positive Staff</div>
 	                </div>
 	            </div>
 	            <div id="asof">Last Updated: <span ref="As of Date"></span></div>
@@ -227,30 +225,23 @@ Positive Staff</div>
 	                        labels: chart_data.map(val => val.Campus).map(val => val.split(" ")),
 	                        datasets: [
 	                            {
-	                                label: " STUDENTS
-Absent w/in last 14 days due to COVID-like symptoms ",
-	                                data: chart_data.map(val => val["STUDENTS
-Absent w/in last 14 days due to COVID-like symptoms"]),
+	                                label: "STUDENTS Absent w/in last 14 days due to COVID-like symptoms",
+	                                data: chart_data.map(val => val["STUDENTS Absent w/in last 14 days due to COVID-like symptoms"]),
 	                                backgroundColor: "#003595",
 	                            },
 	                            {
 	                                label: "Absent Symptomatic Staff",
-	                                data: chart_data.map(val => val["STAFF
-Absent w/in last 14 days due to COVID-like symptoms"]),
+	                                data: chart_data.map(val => val["STAFF Absent w/in last 14 days due to COVID-like symptoms"]),
 	                                backgroundColor: "#838bfa",
 	                            },
 	                            {
-	                                label: " CUMLATIVE
-Positive Students",
-	                                data: chart_data.map(val => val["CUMLATIVE
-Positive Students"]),
+	                                label: " CUMLATIVE Positive Students",
+	                                data: chart_data.map(val => val["CUMLATIVE Positive Students"]),
 	                                backgroundColor: "#cf102d",
 	                            },
 	                            {
-	                                label: " CUMULATIVE
-Positive Staff",
-	                                data: chart_data.map(val => val["CUMULATIVE
-Positive Staff"]),
+	                                label: " CUMULATIVE Positive Staff",
+	                                data: chart_data.map(val => val["CUMULATIVE Positive Staff"]),
 	                                backgroundColor: "#ff8983",
 	                            },
 	                        ],
