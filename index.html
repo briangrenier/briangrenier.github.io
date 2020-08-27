@@ -107,23 +107,31 @@
 	                </div>
 	                <div class="exposed">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
-	                    <div class="number" ref="STUDENTS ABSENT"></div>
-	                    <div>Students Absent w/ COVID-like Symptoms (Past 14 Days)</div>
+	                    <div class="number" ref=" STUDENTS
+Absent w/in last 14 days due to COVID-like symptoms"></div>
+	                    <div> STUDENTS
+Absent w/in last 14 days due to COVID-like symptoms </div>
 	                </div>
 	                <div class="exposed">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
-	                    <div class="number" ref="STAFF ABSENT"></div>
-	                    <div> Staff Absent w/ COVID-like Symptoms (Past 14 Days)</div>
+	                    <div class="number" ref=" STAFF
+Absent w/in last 14 days due to COVID-like symptoms "></div>
+	                    <div> STAFF
+Absent w/in last 14 days due to COVID-like symptoms </div>
 	                </div>
 	                <div class="positive">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
-	                    <div class="number" ref=" STUDENTS POSITIVE"></div>
-	                    <div>Cumulative Students with Positive Cases</div>
+	                    <div class="number" ref=" CUMLATIVE
+Positive Students"></div>
+	                    <div> CUMLATIVE
+Positive Students</div>
 	                </div>
 	                <div class="positive">
 	                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
-	                    <div class="number" ref=" STAFF POSITIVE"></div>
-	                    <div>Cumlative Staff with Positive Cases</div>
+	                    <div class="number" ref="CUMLATIVE
+Positive Staff "></div>
+	                    <div>CUMLATIVE
+Positive Staff</div>
 	                </div>
 	            </div>
 	            <div id="asof">Last Updated: <span ref="As of Date"></span></div>
@@ -219,7 +227,8 @@
 	                        labels: chart_data.map(val => val.Campus).map(val => val.split(" ")),
 	                        datasets: [
 	                            {
-	                                label: "Absent Symptomatic Students",
+	                                label: " STUDENTS
+Absent w/in last 14 days due to COVID-like symptoms ",
 	                                data: chart_data.map(val => val["STUDENTS
 Absent w/in last 14 days due to COVID-like symptoms"]),
 	                                backgroundColor: "#003595",
@@ -231,13 +240,15 @@ Absent w/in last 14 days due to COVID-like symptoms"]),
 	                                backgroundColor: "#838bfa",
 	                            },
 	                            {
-	                                label: "Positive Students (Cumulative)",
+	                                label: " CUMLATIVE
+Positive Students",
 	                                data: chart_data.map(val => val["CUMLATIVE
 Positive Students"]),
 	                                backgroundColor: "#cf102d",
 	                            },
 	                            {
-	                                label: "Positive Staff (Cumulative)",
+	                                label: " CUMULATIVE
+Positive Staff",
 	                                data: chart_data.map(val => val["CUMULATIVE
 Positive Staff"]),
 	                                backgroundColor: "#ff8983",
