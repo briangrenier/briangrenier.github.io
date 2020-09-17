@@ -103,16 +103,6 @@
                     <div class="number" ref="Total Staff"></div>
                     <div>Total Staff</div>
                 </div>
-                <div class="exposed">
-                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
-                    <div class="number" ref="Exposed/Symptomatic Students"></div>
-                    <div>Percent of Students Absent with COVID-Like Symptoms Over the Past 14 Days</div>
-                </div>
-                <div class="exposed">
-                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
-                    <div class="number" ref="Exposed/Symptomatic Staff"></div>
-                    <div>Percent of Staff Absent with COVID-Like Symptoms Over the Past 14 Days</div>
-                </div>
                 <div class="positive">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
                     <div class="number" ref="Positive Students"></div>
@@ -209,16 +199,6 @@
                     data: {
                         labels: chart_data.map(val => val.Campus).map(val => val.split(" ")),
                         datasets: [
-                            {
-                                label: "Students Absent w/ COVID Symptoms Over Past 14 Days",
-                                data: chart_data.map(val => val["Students Absent 14 Days"]),
-                                backgroundColor: "#003595",
-                            },
-                            {
-                                label: "Staff Absent w/ COVID Symptoms Over Past 14 Days",
-                                data: chart_data.map(val => val["Staff Absent 14 Days"]),
-                                backgroundColor: "#838bfa",
-                            },
                             {
                                 label: "Cumulative Number of Positive Students",
                                 data: chart_data.map(val => val["Positive Students"]),
