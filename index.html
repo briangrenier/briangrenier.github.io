@@ -15,7 +15,7 @@
                 position: absolute;
                 width: 100%;
                 height: 100vh;
-                max-width: 100vw;
+                max-width: 960px;
                 max-height: 100vh;
                 display: flex;
                 align-items: center;
@@ -103,15 +103,25 @@
                     <div class="number" ref="Total Staff"></div>
                     <div>Total Staff</div>
                 </div>
+                <div class="exposed">
+                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
+                    <div class="number" ref="Exposed/Symptomatic Students"></div>
+                    <div>Current Exposed/Symptomatic Students</div>
+                </div>
+                <div class="exposed">
+                    <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/face-mask-outline.svg">
+                    <div class="number" ref="Exposed/Symptomatic Staff"></div>
+                    <div>Current Exposed/Symptomatic Staff</div>
+                </div>
                 <div class="positive">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
                     <div class="number" ref="Positive Students"></div>
-                    <div>Cumulative Number of Students with Positive Cases</div>
+                    <div>Current Students with Positive Cases</div>
                 </div>
                 <div class="positive">
                     <img src="https://cdn.jsdelivr.net/npm/@mdi/svg@5.5.55/svg/virus-outline.svg">
                     <div class="number" ref="Positive Staff"></div>
-                    <div>Cumulative Number of Staff with Positive Cases</div>
+                    <div>Current Staff with Positive Cases</div>
                 </div>
             </div>
             <div id="asof">Last Updated: <span ref="As of Date"></span></div>
@@ -121,7 +131,9 @@
             function parse(csv) {
                 const data = []
                 const lines = csv.split("\n")
-                const header = JSON.parse(`[${lines[0]}]`)
+                const header = JSON.parse(`[${lines[0]}]`).filter(h => {
+                    return h != "" && h != null
+                })
                 for (const line of lines.slice(1)) {
                     const item = Object.fromEntries(header.map((_, i) => [header[i], JSON.parse(`[${line}]`)[i]]))
                     data.push(item)
@@ -142,7 +154,6 @@
                 const agg_data = parse(await (await fetch(agg_url)).text())[0]
 
                 for (const entry of Object.entries(agg_data)) {
-                    console.log(entry)
                     document.querySelector(`[ref="${entry[0]}"]`).innerHTML = entry[1]
                 }
 
@@ -200,14 +211,24 @@
                         labels: chart_data.map(val => val.Campus).map(val => val.split(" ")),
                         datasets: [
                             {
-                                label: "Cumulative Number of Positive Students",
+                                label: "Exposed/Symptomatic Students",
+                                data: chart_data.map(val => val["Exposed/Symptomatic Students"]),
+                                backgroundColor: "#003595",
+                            },
+                            {
+                                label: "Exposed/Symptomatic Staff",
+                                data: chart_data.map(val => val["Exposed/Symptomatic Staff"]),
+                                backgroundColor: "#838bfa",
+                            },
+                            {
+                                label: "Positive Students",
                                 data: chart_data.map(val => val["Positive Students"]),
                                 backgroundColor: "#cf102d",
                             },
                             {
-                                label: "Cumulative Number of Positive Staff",
+                                label: "Positive Staff",
                                 data: chart_data.map(val => val["Positive Staff"]),
-                                backgroundColor: "#003595",
+                                backgroundColor: "#ff8983",
                             },
                         ],
                     },
